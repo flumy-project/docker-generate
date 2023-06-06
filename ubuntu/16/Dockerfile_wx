@@ -1,0 +1,26 @@
+FROM ubuntu:16.04
+
+RUN apt-get update
+
+# Install compulsory tools
+# ==============================================================
+RUN apt-get install -y wget &&\
+    apt-get install -y make &&\
+    apt-get install -y g++ &&\
+    apt-get install -y git
+    
+# Install recent cmake (from source)
+# ==============================================================
+# https://gist.github.com/sergio-gimenez/b17b3ff894366627dbf3cb9682d0c3d2
+RUN apt-get install -y apt-transport-https ca-certificates gnupg software-properties-common &&\
+    wget -qO - https://apt.kitware.com/keys/kitware-archive-latest.asc | apt-key add - &&\
+    apt-add-repository 'deb https://apt.kitware.com/ubuntu/ xenial main' &&\
+    apt-get update &&\
+    apt-get install -y cmake
+
+# Install recent wxWidgets and freeglut library
+# ==============================================================
+RUN apt-get install -y libwxgtk3.0-dev &&\
+    apt-get install -yq freeglut3-dev
+
+
