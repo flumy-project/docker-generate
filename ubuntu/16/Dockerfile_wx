@@ -20,7 +20,7 @@ RUN apt-get install -y apt-transport-https ca-certificates gnupg software-proper
 
 # Install recent wxWidgets and freeglut library
 # ==============================================================
-# hForce gtk3 ttps://forum.kicad.info/t/force-gtk3-build/14173/7
+# Force gtk3 https://forum.kicad.info/t/force-gtk3-build/14173/7
 RUN apt-get install -y libwxgtk3.0-gtk3-dev &&\
     apt-get install -yq freeglut3-dev
 
