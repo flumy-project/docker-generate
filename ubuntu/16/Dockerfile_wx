@@ -20,8 +20,8 @@ RUN apt-get install -y apt-transport-https ca-certificates gnupg software-proper
 
 # Install recent wxWidgets and freeglut library
 # ==============================================================
-# Force gtk3
-RUN apt-get install -y libwxgtk3.0-0v5 &&\
+# Use gtk2 (no gtk3 available... use ubuntu 18 at least)
+RUN apt-get install -y libwxgtk3.0-dev &&\
     apt-get install -yq freeglut3-dev
 
 
