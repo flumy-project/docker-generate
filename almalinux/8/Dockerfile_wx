@@ -1,0 +1,5 @@
+FROM almalinux:8
+
+RUN dnf update
+RUN dnf install epel-release
+RUN dnf install gcc-c++ make pkgconfig cmake wxGTK3-devel gtk3-devel freeglut-devel

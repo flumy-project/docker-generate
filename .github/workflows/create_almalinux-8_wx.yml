@@ -1,4 +1,4 @@
-name: ubuntu-18 for wxWidgets-based software
+name: almalinux-8 for wxWidgets-based software
 
 on:
   workflow_dispatch:
@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build and push ubuntu-18-wx docker
+      - name: Build and push almalinux-8-wx docker
         working-directory: .
         run: |
-          docker build -t ${{env.USER}}/ubuntu-18-wx -f ubuntu/18/Dockerfile_wx .
+          docker build -t ${{env.USER}}/almalinux-8-wx -f almalinux/8/Dockerfile_wx .
           docker login -u ${{env.USER}} -p ${{env.TOKEN}}
-          docker push ${{env.USER}}/ubuntu-18-wx
+          docker push ${{env.USER}}/almalinux-8-wx
           docker logout
         env:
           USER: ${{ secrets.DOCKER_HUB_USERNAME }}
