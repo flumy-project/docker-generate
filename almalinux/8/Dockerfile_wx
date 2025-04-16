@@ -3,4 +3,3 @@ FROM almalinux:8
 RUN dnf -y update
 RUN dnf -y install epel-release
 RUN dnf -y install gcc-c++ make pkgconfig cmake wxGTK3-devel gtk3-devel freeglut-devel
-RUN dnf -y install astral-uv
